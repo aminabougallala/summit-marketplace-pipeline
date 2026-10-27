@@ -26,10 +26,11 @@ definition or a receiver, and never trigger a DAG other than
 
 ## Step 0 · Preflight
 
-1. Check the MCP connection: call `get_session_info`. If the call fails with
-   an authorization error, tell the engineer: open `.bob/mcp.json` (Settings
-   → MCP → Edit Project MCP), replace `PASTE_LAB_API_KEY` with the lab API
-   key from the instructor, save, and reload the window; then stop and wait.
+1. Check the MCP connection: call `get_session_info`. If the call fails or
+   the tool is not available, tell the engineer: open Settings → MCP → +,
+   select the scope **Global**, click **Open Configuration File**, paste the
+   MCP configuration from the lab guide (section 5.4), save, and start a new
+   task; then stop and wait.
 2. Check git: run `git --version`. If git is not installed, offer to install
    it and, with approval, run
    `winget install --id Git.Git -e --source winget --accept-package-agreements --accept-source-agreements`.

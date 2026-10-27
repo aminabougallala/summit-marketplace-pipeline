@@ -9,7 +9,7 @@ previous day into the table behind the daily revenue report.
 | `dags/marketplace_settlements_daily.py` | The pipeline. One task reads TrailMart's partner API page by page and loads the rows; a second task reports the run and its metrics to IBM Data Observability. |
 | `docs/trailmart-partner-api.md` | TrailMart's partner API reference and change log. |
 | `docs/runbook.md` | How the pipeline is operated and how a change is deployed. |
-| `.bob/` | The team's IBM Bob configuration: the **Summit on-call engineer** mode and the connection to the Data Observability MCP server. |
+| `.bob/` | The team's IBM Bob configuration: the **Summit on-call engineer** mode (`custom_modes.yaml`) and its runbook (`rules-summit-on-call/`). |
 
 ## For the TechXchange lab (LAB-3079)
 
@@ -20,8 +20,9 @@ Data Observability raised on this pipeline. Bob reads the alert, finds the
 cause, proposes the code change for your review, deploys it and verifies the
 re-run.
 
-The repository is read-only for the lab: your fix stays on a local branch.
-In your own team, the next step would be a pull request.
+The repository is read-only for the lab: your fix stays on your
+workstation. In your own team, the next step would be a pull request.
 
-Before you start, put the lab's API key into `.bob/mcp.json` (replace
-`PASTE_LAB_API_KEY`); the lab guide tells you where the key comes from.
+The lab guide shows how to connect Bob to the Data Observability MCP server
+(Settings → MCP, global scope) and how to import the mode (Settings → Modes →
+Import `.bob/custom_modes.yaml`).
