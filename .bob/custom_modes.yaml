@@ -25,7 +25,7 @@ customModes:
     groups:
       - read
       - - edit
-        - fileRegex: "^dags/.*\\.py$"
+        - fileRegex: "(^|[\\\\/])dags[\\\\/][^\\\\/]+\\.py$"
           description: Pipeline code only
       - execute
       - mcp

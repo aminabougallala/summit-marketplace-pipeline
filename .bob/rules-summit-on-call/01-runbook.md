@@ -17,7 +17,7 @@ that changes something, or deploy.
 | Airflow URL | `https://163.66.91.133/airflow` |
 | Airflow API | `https://163.66.91.133/airflow/api/v1` |
 | Airflow account | user `admin`, password `IBMDem0s1` |
-| Airflow TLS | self-signed certificate: use `curl.exe -k` |
+| Airflow TLS | self-signed certificate: use `curl.exe -k` (on macOS or Linux, `curl -k`) |
 
 The alert, the project and the Airflow server are shared by every engineer
 in the lab. Never acknowledge, resolve, update or delete an alert, an alert
@@ -39,7 +39,9 @@ definition or a receiver, and never trigger a DAG other than
    terminal: run `$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")`
    in the current terminal, and check `git --version` again. If git cannot
    be installed, continue without the commit step and say so.
-3. If the folder is not a git repository yet (the engineer downloaded a
+3. If `curl.exe` is not found (macOS or Linux workstation), use `curl` with the
+   same arguments everywhere below.
+4. If the folder is not a git repository yet (the engineer downloaded a
    ZIP), run `git init`, `git add -A` and
    `git commit -m "Import the marketplace pipeline as released"` so the fix
    is a separate commit.
