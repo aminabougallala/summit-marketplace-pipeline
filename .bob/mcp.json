@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "ibm-agentic-data-integration": {
+      "type": "streamable-http",
+      "url": "https://api.ca-tor.dai.cloud.ibm.com/data_intg_ai/v1/mcp",
+      "headers": {
+        "Authorization": "ApiKey PASTE_LAB_API_KEY"
+      },
+      "timeout": 120000,
+      "disabled": false,
+      "alwaysAllow": [
+        "get_session_info",
+        "get_projects",
+        "get_alert",
+        "list_alerts",
+        "get_alerts_summary",
+        "list_alert_definitions",
+        "list_alert_receivers",
+        "list_jobs",
+        "list_job_runs",
+        "get_job_run_details",
+        "get_job_run_logs"
+      ]
+    }
+  }
+}
